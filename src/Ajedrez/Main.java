@@ -7,7 +7,7 @@ public class Main {
 	private Scanner keyboard = new Scanner(System.in);
 
 	public void iniciarPrograma() {
-		System.out.println("BIENVENIDO AL PROYECTO DE AJEDREZ");
+		System.out.println("★ Bienvenid@ a Mi Programa ★");
 
 		boolean repetir = true;
 
