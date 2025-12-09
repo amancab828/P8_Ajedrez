@@ -19,25 +19,6 @@ public class Tablero {
 
 			for (int column = 1; column <= 8; column++) {
 
-				boolean esMovimiento = Movimientos.esMovimiento(tipo, piezaFila, piezaColumna, row, column);
-
-				if (row == piezaFila && column == piezaColumna) {
-					System.out.print(blue);
-
-				} else if (esMovimiento) {
-					System.out.print(red);
-
-				} else if ((row + column) % 2 != 0) {
-					System.out.print(white);
-
-				} else {
-					System.out.print(black);
-				}
-			}
-
-			System.out.println(" " + row);
-		}
-
-		System.out.println("  a b c d e f g h");
+			
 	}
 }
