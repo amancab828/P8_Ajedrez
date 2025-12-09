@@ -21,13 +21,22 @@ public class Movimientos {
         }
     }
     
-    public static boolean movAlfil(int filaP, int colP, int filaC, int colC) {
-        // TODO: devolver true si es un movimiento válido de alfil
-        return false;
+    private static boolean movAlfil(int f, int c, int fila, int col) {
+        if (Math.abs(f - fila) == Math.abs(c - col)) { //Condición para la diagonal
+            return true;
+        } else {
+        	return false;
+        }
     }
 
-    public static boolean movCaballo(int filaP, int colP, int filaC, int colC) {
-        // TODO: devolver true si es un movimiento válido de caballo
-        return false;
+    private static boolean movCaballo(int f, int c, int fila, int col) {
+        int df = Math.abs(f - fila);
+        int dc = Math.abs(c - col);
+
+        if ((df == 2 && dc == 1) || (df == 1 && dc == 2)) {
+        	return true;
+        } else {
+        	return false;
+        }
     }
 }
