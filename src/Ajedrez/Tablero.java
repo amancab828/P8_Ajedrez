@@ -9,20 +9,35 @@ public class Tablero {
 	private static final String white = "\u001B[47m  " + reset; // casilla blanca
 	private static final String black = "\u001B[40m  " + reset; // casilla negra
 
-	public static void imprimir(int fila, int columna, String tipo) {
-    	
-    	System.out.println("  a b c d e f g h");
+	public static void imprimir(int piezaFila, int piezaColumna, String tipo) {
 
-        for (int row = 8; row >= 1; row--) {
+		System.out.println("  a b c d e f g h");
 
-            System.out.printf(" %d", row);
+		for (int row = 8; row >= 1; row--) {
 
-            for (int column = 1; column <= 8; column++) {
+			System.out.printf(" %d", row);
 
-                boolean esMovimiento = Movimientos.esMovimiento(tipo, piezaFila, piezaColumna, row, column);
+			for (int column = 1; column <= 8; column++) {
 
-                if (row == piezaFila && column == piezaColumna) {
-                    System.out.print(blue);
-        
-    }
+				boolean esMovimiento = Movimientos.esMovimiento(tipo, piezaFila, piezaColumna, row, column);
+
+				if (row == piezaFila && column == piezaColumna) {
+					System.out.print(blue);
+
+				} else if (esMovimiento) {
+					System.out.print(red);
+
+				} else if ((row + column) % 2 != 0) {
+					System.out.print(white);
+
+				} else {
+					System.out.print(black);
+				}
+			}
+
+			System.out.println(" " + row);
+		}
+
+		System.out.println("  a b c d e f g h");
+	}
 }
